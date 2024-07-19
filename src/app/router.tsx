@@ -1,9 +1,9 @@
-import { Navigate, createBrowserRouter } from 'react-router-dom'
+import { Navigate, createHashRouter } from 'react-router-dom'
 import { AuthPage } from '../modules/auth'
 import { CustomerPage, CustomersPage } from '../modules/customers'
 import { Root } from './Root'
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
 		path: 'login',
 		element: <AuthPage />,
