@@ -39,7 +39,7 @@ jobs:
               cache: 'yarn'
 
          - name: Install dependencies
-           run: yarn add
+           run: yarn
 
          - name: Build Vite React App
            run: yarn build
