@@ -1,5 +1,4 @@
 import {
-	Middleware,
 	ThunkAction,
 	UnknownAction,
 	asyncThunkCreator,

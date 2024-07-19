@@ -47,7 +47,7 @@ startAppListening({
 })
 startAppListening({
 	actionCreator: authSlice.actions.cancelAuth,
-	effect: (action, listenerApi) => {
+	effect: () => {
 		setToLS({ isAuthorized: false, userData: null })
 	},
 })
