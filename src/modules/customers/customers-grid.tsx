@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
-import { Icon } from '../../shared/components/icon'
-import Thumbnail from '../../shared/components/thumbnail'
 import { useAppDispatch, useAppSelector } from '../../shared/lib/redux'
 import { cn } from '../../shared/lib/utils'
+import { Icon } from '../../shared/ui/icon'
+import Thumbnail from '../../shared/ui/thumbnail'
 import { likedCustomersSlice } from './model/likedCustomers.slice'
 import { Customer, CustomerId } from './model/types'
 

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
-import { Icon } from '../../shared/components/icon'
 import { cn } from '../../shared/lib/utils'
+import { Icon } from '../../shared/ui/icon'
 import { generatePagination } from './generate-pagination'
 
 interface PaginationProps {

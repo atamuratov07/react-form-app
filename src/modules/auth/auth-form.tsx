@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Button } from '../../shared/components/button'
 import { cn } from '../../shared/lib/utils'
+import { Button } from '../../shared/ui/button'
 import { FormData, FormFieldProps, FormSchema } from './model/types'
 
 function Form({ submitHandler }: { submitHandler: (data: FormData) => void }) {

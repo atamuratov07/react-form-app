@@ -1,8 +1,8 @@
 import { skipToken } from '@reduxjs/toolkit/query'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Button } from '../../shared/components/button'
-import { Icon } from '../../shared/components/icon'
-import Thumbnail from '../../shared/components/thumbnail'
+import { Button } from '../../shared/ui/button'
+import { Icon } from '../../shared/ui/icon'
+import Thumbnail from '../../shared/ui/thumbnail'
 import { customersApi } from './model/api'
 
 export function CustomerPage() {

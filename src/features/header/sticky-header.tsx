@@ -1,8 +1,8 @@
 import { authSlice } from '../../modules/auth'
-import { Button } from '../../shared/components/button'
-import { Icon } from '../../shared/components/icon'
 import { useAppDispatch } from '../../shared/lib/redux'
 import { cn } from '../../shared/lib/utils'
+import { Button } from '../../shared/ui/button'
+import { Icon } from '../../shared/ui/icon'
 import { useHeaderTranslate } from './model/useHeaderTranslate'
 
 export function StickyHeader() {

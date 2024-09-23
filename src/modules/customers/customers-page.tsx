@@ -1,6 +1,4 @@
-import { skipToken } from '@reduxjs/toolkit/query'
-import { useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { createSearchParams, useSearchParams } from 'react-router-dom'
 import { Pagination } from '../../features/pagination'
 import { CustomersGrid } from './customers-grid'
 import { customersApi } from './model/api'
@@ -8,14 +6,14 @@ import { customersApi } from './model/api'
 export function CustomersPage() {
 	const [params, setParams] = useSearchParams()
 
-	const pageQuery = params.get('page')
-	const { data: customers, isLoading } = customersApi.useCustomersListQuery(
-		pageQuery ? { page: +pageQuery } : skipToken
-	)
+	const pageQuery = params.get('page') ?? '1'
+	const { data: customers, isLoading } = customersApi.useCustomersListQuery({
+		page: +pageQuery,
+	})
 
-	useEffect(() => {
-		pageQuery ?? setParams({ page: '1' })
-	}, [])
+	// useEffect(() => {
+	// 	pageQuery ?? setParams(({ page: '1' }))
+	// }, [])
 
 	return (
 		<section>
@@ -25,18 +23,19 @@ export function CustomersPage() {
 					<p className='text-xl'>
 						Это опытные специалисты, хорошо разбирающиеся во всех задачах,
 						которые ложатся на их плечи, и умеющие находить выход из
-						любых, даже самых сложных ситуаций.{' '}
+						любых, даже самых сложных ситуаций.
 					</p>
 				</div>
 			</header>
 			{customers && (
 				<Pagination
-					currentPage={Number(pageQuery) ?? 1}
+					currentPage={+pageQuery}
 					totalPages={customers.pages}
 					firstPage={customers.first}
 					lastPage={customers.last}
 					onPageChange={page => {
-						setParams({ page: String(page) })
+						console.log(createSearchParams({ page: String(page) }))
+						setParams(createSearchParams({ page: String(page) }))
 					}}
 					className='justify-center py-10'
 				/>
